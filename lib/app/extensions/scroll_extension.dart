@@ -5,7 +5,7 @@ extension ScrollControllerExtensions on ScrollController {
       <void Function()>[]; // Store callback references
 
   void onScrollEndsListener(
-    final void Function() callback, {
+    void Function() callback, {
     double offset = 0,
   }) {
     final maxScroll = position.maxScrollExtent;
@@ -26,7 +26,7 @@ extension ScrollControllerExtensions on ScrollController {
     }
   }
 
-  void removeAttachedListener(final void Function() callback) {
+  void removeAttachedListener(void Function() callback) {
     if (_listeners.contains(callback)) {
       removeListener(() {
         // Do nothing, just to clear the listener
